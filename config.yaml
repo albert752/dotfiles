@@ -1,0 +1,28 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  ignoreempty: false
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  f_config:
+    dst: ~/.config/i3/config
+    src: config/i3/config
+  f_polybar_config:
+    dst: ~/.config/polybar/config
+    src: config/polybar/config
+  f_vimrc:
+    dst: ~/.vimrc
+    src: vimrc
+profiles:
+  debian752:
+    dotfiles:
+    - f_vimrc
+    - f_config
+    - f_polybar_config
