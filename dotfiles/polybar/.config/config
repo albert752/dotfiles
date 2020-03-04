@@ -26,14 +26,22 @@ material-light-background = #771d1f21
 material-primary = #771d1f21
 material-warn = #8c0000 
 material-invisible = #00000000
-black = #111111
+black = #00000000
 
+yellow = #859900
+orange = #cb4b16
+red = #dc322f
+magenta = #d33682
+violet = #6c71c4
+blue = #268bd2
+cyan = #2aa198
+green = #859900
 ;=====================================================
 ;   variables
 ;=====================================================
 [variables]
-bar-height = 30
-bar-border-size = 1
+bar-height = 25
+bar-border-size = 0
 
 label-padding = 1
 label-maxlen = 50
@@ -42,8 +50,12 @@ label-maxlen = 50
 ;   fonts
 ;=====================================================
 [fonts]
-font-0 = Gohu GohuFont:style=Regular:size=12:antialias=true;2
-font-1 = Gohu GohuFont:style=Bold:size=12:antialias=true;2
+# font-0 = Gohu GohuFont:style=Regular:size=11:antialias=true;2
+# font-1 = Gohu GohuFont:style=Bold:size=11:antialias=true;2
+;font-0 = Gohu GohuFont:style=Regular:size=14:antialias=true;2
+;font-1 = Gohu GohuFont:style=Bold:size=14:antialias=true;2
+font-0 = Ubuntu:style=Regular:size=14:antialias=true;2
+font-1 = Ubuntu:style=Bold:size=14:antialias=true;2
 font-2 = Iosevka:size=12:antialias=true;2
 font-3 = Iosevka:size=12:weight=bold:antialias=true;2
 font-4 = Material Icons:size=11:antialias=true;3
@@ -69,9 +81,9 @@ font-2 = ${fonts.font-2}
 font-3 = ${fonts.font-3}
 font-4 = ${fonts.font-4}
 
-modules-left = user lsp i3 lpd ldl title
-modules-center = 
-modules-right = remain_time rld rsd rld wireless-network rld rsd rld emperature battery rld rsd rld memory rld rsd rld cpu rld rsd rsd rld volume volume_level rdp date rld rsp time
+modules-left = user lsp i3 lpd ldl 
+modules-center = title
+modules-right = battery rdp date rld rsp time
 
 tray-position = right
 tray-padding = 10
@@ -474,6 +486,7 @@ type = custom/text
 content = %{T5}%{T-} %{T2}albert752%{T-}
 content-background = ${colors.material-primary}
 content-padding = ${variables.label-padding}
+content-foreground = ${colors.green}
 
 ;=====================================================
 ;   module/title
@@ -544,7 +557,6 @@ inherit = section/base_right_dark
 interval = 1
 
 label = %{T5}%{T-} %percentage:3%%
-
 ;=====================================================
 ;   module/memory
 ;=====================================================
@@ -575,9 +587,7 @@ type = internal/date
 inherit = section/base_right_primary
 interval = 1
 time = %H:%M
-
 label = %{T5}%{T-} %{T2}%time%%{T-}
-
 ;=====================================================
 ;   module/date
 ;=====================================================
@@ -619,11 +629,13 @@ battery = BAT0
 adapter = AC
 full-at = 95
 
+time-format = %H:%M
+
 format-charging = <label-charging>
-label-charging = %{T5}%{T-} %percentage:3%%
+label-charging = %{T5}%{T-} %percentage:3%% %time%
 
 format-discharging = <label-discharging>
-label-discharging = %{T5}%{T-} %percentage:3%%
+label-discharging = %{T5}%{T-} %percentage:3%% %time%
 
 format-full = <label-full>
 label-full = %{T5}%{T-} %percentage:3%%
@@ -652,7 +664,7 @@ interface = wlp3s0
 ;=====================================================
 [module/remain_time]
 type = custom/script
-exec = acpi | grep -o -P '.{0,9}remaining'
+exec = tput setaf 2; acpi | grep -o -P '.{0,9}remaining'
 tail = true
 interval = 1
 
@@ -671,3 +683,4 @@ margin-top = 0
 margin-bottom = 0
 
 vim:ft=dosini
+
