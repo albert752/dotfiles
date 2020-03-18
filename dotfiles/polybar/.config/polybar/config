@@ -21,9 +21,13 @@
 ;=====================================================
 [colors]
 material-foreground = #ffc7ccd1
-material-dark-background = #771d1f21
-material-light-background = #771d1f21
-material-primary = #771d1f21
+;material-dark-background = #881d1f21
+;material-light-background = #881d1f21
+;material-primary = #881d1f21
+material-dark-background = #99342936
+material-light-background = #99342936
+material-primary = #99342936
+
 material-warn = #8c0000 
 material-invisible = #00000000
 black = #00000000
@@ -59,6 +63,8 @@ font-1 = Ubuntu:style=Bold:size=14:antialias=true;2
 font-2 = Iosevka:size=12:antialias=true;2
 font-3 = Iosevka:size=12:weight=bold:antialias=true;2
 font-4 = Material Icons:size=11:antialias=true;3
+font-5 = mono:pixelsize=18:antialias=true:autohint=true
+font-6 = JoyPixels:pixelsize=10:antialias=true:autohint=true
 
 ;=====================================================
 ;   bar/top
@@ -483,10 +489,9 @@ content-background = ${colors.material-primary}
 [module/user]
 type = custom/text
 
-content = %{T5}%{T-} %{T2}albert752%{T-}
+content = %{T5}  %{T-} %{T2}albert752%{T-}
 content-background = ${colors.material-primary}
 content-padding = ${variables.label-padding}
-content-foreground = ${colors.green}
 
 ;=====================================================
 ;   module/title

@@ -1,13 +1,13 @@
 # dotfiles
 ## Introduction
-This repo contains all my dotfiles. They are sync with [dotdrop](https://github.com/deadc0de6/dotdrop).
+This repo contains all my dotfiles. 
 Feel free to use them however you wish.
 
-## i3
-More info TBD
+## TODO
+- [ ] Coose a definitive colour scheme
+- [ ] Set up MUTT
+- [x] Find a suitable wallpaper
+- [ ] Create a qutebrowser welcome page
+- [ ] VimRc shorcuts for latex and markdown
+- [ ] Rifle vim by default
 
-## Polybar
-More info TBD
-
-## Vimrc
-More info TBD
