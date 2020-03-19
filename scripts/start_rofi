@@ -1,0 +1,2 @@
+#!/bin/bash
+rofi -show drun -yoffset -175 -lines 5
