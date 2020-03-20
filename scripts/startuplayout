@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Workspace 8
+i3-msg 'workspace 8; append_layout ~/.w8.json'
+i3-msg 'exec keepassxc'
+i3-msg 'exec st -e gotop'
+i3-msg 'exec st -e htop'
+
+

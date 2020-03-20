@@ -4,9 +4,9 @@ configuration {
 }
 
 * {
-  background-color: #332835;
+  background-color: #073642;
   border-color: #404242;
-  text-color: #8ca0aa;
+  text-color: #93a1a1;
   spacing: 0;
   width: 512px;
 }
@@ -51,5 +51,6 @@ element {
 }
 
 element selected {
-  background-color: #2e343f;
+  background-color: #b58900;
+  text-color: #002b36;
 }

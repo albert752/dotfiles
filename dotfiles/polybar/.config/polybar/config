@@ -24,9 +24,9 @@ material-foreground = #ffc7ccd1
 ;material-dark-background = #881d1f21
 ;material-light-background = #881d1f21
 ;material-primary = #881d1f21
-material-dark-background = #99342936
-material-light-background = #99342936
-material-primary = #99342936
+material-dark-background = #00342936
+material-light-background = #00342936
+material-primary = #00342936
 
 material-warn = #8c0000 
 material-invisible = #00000000
@@ -44,27 +44,24 @@ green = #859900
 ;   variables
 ;=====================================================
 [variables]
-bar-height = 25
+bar-height = 35
 bar-border-size = 0
 
-label-padding = 1
+label-padding = 2
 label-maxlen = 50
 
 ;=====================================================
 ;   fonts
 ;=====================================================
 [fonts]
-# font-0 = Gohu GohuFont:style=Regular:size=11:antialias=true;2
-# font-1 = Gohu GohuFont:style=Bold:size=11:antialias=true;2
-;font-0 = Gohu GohuFont:style=Regular:size=14:antialias=true;2
-;font-1 = Gohu GohuFont:style=Bold:size=14:antialias=true;2
 font-0 = Ubuntu:style=Regular:size=14:antialias=true;2
 font-1 = Ubuntu:style=Bold:size=14:antialias=true;2
 font-2 = Iosevka:size=12:antialias=true;2
 font-3 = Iosevka:size=12:weight=bold:antialias=true;2
 font-4 = Material Icons:size=11:antialias=true;3
-font-5 = mono:pixelsize=18:antialias=true:autohint=true
-font-6 = JoyPixels:pixelsize=10:antialias=true:autohint=true
+font-5 = Font Awesome 5 Free Regular:style=Regular
+
+;font-6 = JoyPixels:pixelsize=10:antialias=true:autohint=true
 
 ;=====================================================
 ;   bar/top
@@ -489,7 +486,7 @@ content-background = ${colors.material-primary}
 [module/user]
 type = custom/text
 
-content = %{T5}  %{T-} %{T2}albert752%{T-}
+content = %{T5}  %{T-} %{T2}albert752 %{T5}  %{T-}%{T-}
 content-background = ${colors.material-primary}
 content-padding = ${variables.label-padding}
 
@@ -513,14 +510,21 @@ wrapping-scroll = true
 strip-wsnumbers = true
 pin-workspaces = true
 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-default = ♟
+
 format-padding = ${variables.label-padding}
 format-background = ${colors.material-primary}
 
-label-focused = %{T4}●%{T-} %index%
+label-focused = %{T4}●%{T-} %index% %icon%
 label-focused-font = 2
 label-focused-padding = ${variables.label-padding}
 
-label-unfocused = %{T4}◌%{T-} %index%
+label-unfocused = %{T4}◌%{T-} %index% %icon%
 label-unfocused-font = 2
 label-unfocused-padding = ${variables.label-padding}
 
@@ -638,6 +642,7 @@ time-format = %H:%M
 
 format-charging = <label-charging>
 label-charging = %{T5}%{T-} %percentage:3%% %time%
+
 
 format-discharging = <label-discharging>
 label-discharging = %{T5}%{T-} %percentage:3%% %time%

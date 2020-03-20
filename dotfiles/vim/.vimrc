@@ -7,7 +7,9 @@ set encoding=UTF-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
-" set cursorline
+set colorcolumn=80
+set textwidth=80
+set cursorline
 let mapleader = ","
 
 " Quick vimrc edit
@@ -23,26 +25,27 @@ filetype plugin indent on
 map <C-t> :NERDTreeToggle<CR>
 imap <C-e> <C-o>A
 nmap <C-n> :tabnew<CR>
+map <C-i> /<++><Enter>"_c4l
+imap ;pl <++>
+
 
 " Python syntax
 let g:python_highlight_all = 1
 
+" LaTeX
+let g:vimtex_view_method = 'zathura'
+autocmd FileType tex inoremap ;i \textit{}<Esc>i
+autocmd FileType tex inoremap ;b \textbf{}<Esc>i
+autocmd FileType tex inoremap ;s \underline{}<Esc>i
+autocmd FileType tex inoremap ;t \texttt{}<Esc>i
+autocmd FileType tex inoremap ;f \footnote{}<Esc>i
+
 " Solarized Colour Scheme
-"let g:solarized_termcolors=16
-"syntax enable
-"set background=dark
-"colorscheme solarized
+let g:solarized_termcolors=16
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Status bar
 set laststatus=2
 
-
-"" Custom colours
-highlight LineNr ctermfg=darkgrey
-"highlight String ctermfg=darkgreen
-"highlight Function ctermfg=blue
-"highlight Import ctermfg=darkyellow
-"highlight Boolean ctermfg=magenta
-""highlight Comment ctermfg,green
-"highlight Normal ctermfg=grey
-"highlight pythonImport ctermfg=darkyellow

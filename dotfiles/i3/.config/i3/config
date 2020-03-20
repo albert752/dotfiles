@@ -8,7 +8,7 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -28,6 +28,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec st
+bindsym $mod+Shift + Return exec st; floating toggle
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -213,6 +214,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="St"] floating enable 
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [title="FdasyuVFO6ut.kdbx [Locked] - KeePassXC"] floating disable 
 for_window [class="KeePassXC"] floating enable 
 for_window [class="Xfburn"] floating enable
 
@@ -289,7 +291,7 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id polybar_start
-exec --no-startup-id keepassxc
+exec_always --no-startup-id i3-msg 'workspace 8; exec keepassxc; workspace 1'
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
