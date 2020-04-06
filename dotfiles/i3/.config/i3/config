@@ -40,6 +40,10 @@ bindsym $mod+d exec --no-startup-id start_rofi
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
+# touchpad toggle
+bindsym XF86TouchpadToggle exec touchpad-toggle
+
+
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################

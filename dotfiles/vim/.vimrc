@@ -22,6 +22,7 @@ syntax on
 filetype plugin indent on
 
 " Shortcuts
+"let search_and_destroy = "/<++><Enter>"_c4l"
 map <C-t> :NERDTreeToggle<CR>
 imap <C-e> <C-o>A
 nmap <C-n> :tabnew<CR>
@@ -34,11 +35,18 @@ let g:python_highlight_all = 1
 
 " LaTeX
 let g:vimtex_view_method = 'zathura'
-autocmd FileType tex inoremap ;i \textit{}<Esc>i
-autocmd FileType tex inoremap ;b \textbf{}<Esc>i
-autocmd FileType tex inoremap ;s \underline{}<Esc>i
-autocmd FileType tex inoremap ;t \texttt{}<Esc>i
-autocmd FileType tex inoremap ;f \footnote{}<Esc>i
+autocmd FileType *tex* inoremap ;i \textit{}<Esc>i
+autocmd FileType *tex* inoremap ;b \textbf{}<Esc>i
+autocmd FileType *tex* inoremap ;s \underline{}<Esc>i
+autocmd FileType *tex* inoremap ;t \texttt{}<Esc>i
+autocmd FileType *tex* inoremap ;f \footnote{}<Esc>i
+autocmd FileType *tex* set spell spelllang=en_us
+
+" HTML and HTMLDJANGO
+autocmd FileType *html* setlocal tabstop=2
+autocmd FileType *html* setlocal shiftwidth=2
+autocmd FileType *html* inoremap ;div <div><++></div><Esc>/<++><Enter>"_c4l
+autocmd FileType *html* inoremap ;p <p><++></p><Esc>/<++><Enter>"_c4l
 
 " Solarized Colour Scheme
 let g:solarized_termcolors=16

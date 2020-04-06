@@ -105,4 +105,5 @@ alias pconf="vim ~/.config/polybar/config"
 alias rconf="vim ~/.config/ranger/rc.conf"
 alias tfg="cd ~/TFG/TFG-Source-Code"
 alias xconf="vim ~/.Xresources"
+alias toggle-touchpad "~/.i3/scripts/toggle-touchpad"
 EDITOR=vim
