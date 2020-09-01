@@ -296,7 +296,7 @@ exec --no-startup-id xbanish -d
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id polybar_start
+exec_always --no-startup-id /home/albert752/.config/polybar/launch.sh
 exec_always --no-startup-id i3-msg 'workspace 8; exec keepassxc; workspace 1'
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -345,8 +345,8 @@ set_from_resource $term_color15    color15
 #############################
 
 # Set inner/outer gaps
-#gaps inner 14
-#gaps outer -2
+#gaps inner 10
+#gaps outer 3
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -364,7 +364,9 @@ set_from_resource $term_color15    color15
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+bindsym $mod+g gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+g gaps inner current set 10; gaps outer current set 3
+#bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"

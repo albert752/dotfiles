@@ -18,19 +18,17 @@ nnoremap <Leader>vr :source $MYVIMRC<CR>
 
 " Pathogen
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
 
 " Shortcuts
 "let search_and_destroy = "/<++><Enter>"_c4l"
 map <C-t> :NERDTreeToggle<CR>
-imap <C-e> <C-o>A
+map <C-e> <C-o>A
 nmap <C-n> :tabnew<CR>
 map <C-i> /<++><Enter>"_c4l
 imap ;pl <++>
 
-
-" Python syntax
+"Python syntax
 let g:python_highlight_all = 1
 
 " LaTeX
@@ -48,12 +46,14 @@ autocmd FileType *html* setlocal shiftwidth=2
 autocmd FileType *html* inoremap ;div <div><++></div><Esc>/<++><Enter>"_c4l
 autocmd FileType *html* inoremap ;p <p><++></p><Esc>/<++><Enter>"_c4l
 
-" Solarized Colour Scheme
-let g:solarized_termcolors=16
-syntax enable
-set background=dark
-colorscheme solarized
-
 " Status bar
 set laststatus=2
 
+" Colorscheme
+syntax enable
+set background=dark
+colorscheme gruvbox
+
+" NerdTree
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
