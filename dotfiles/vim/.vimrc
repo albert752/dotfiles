@@ -57,3 +57,4 @@ colorscheme gruvbox
 " NerdTree
 let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
+

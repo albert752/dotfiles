@@ -1,0 +1,1 @@
+echo "pub_ip: $(wget -qO - icanhazip.com)"
