@@ -26,6 +26,7 @@ font pango:monospace 10
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id unclutter
+exec_always --no-startup-id keepassxc
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -175,10 +176,70 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Colors
+# hard contrast: *background: #1d2021
+set $background #282828
+#*background: #32303f
+# soft contrast: *background: #32302f
+set $foreground #ebdbb2
+# Black + DarkGrey
+set $color0  #282828
+set $color8  #928374
+# DarkRed + Red
+set $color1  #cc241d
+set $color9  #fb4934
+# DarkGreen + Green
+set $color2  #98971a
+set $color10 #b8bb26
+# DarkYellow + Yellow
+set $color3  #d79921
+set $color11 #fabd2f
+# DarkBlue + Blue
+set $color4  #458588
+set $color12 #83a598
+# DarkMagenta + Magenta
+set $color5  #b16286
+set $color13 #d3869b
+# DarkCyan + Cyan
+set $color6  #689d6a
+set $color14 #8ec07c
+# LightGrey + White
+set $color7  #a89984
+set $color15 #ebdbb2
+
+exec_always --no-startup-id xsetroot -solid "#333333"
+# class                 border   backgr.      text          indicator  child_border
+client.focused          $color12 $color4      $background   $color12   $color12
+client.focused_inactive $color12 $background  #888888       $color12   $color12
+client.unfocused        #333333  $background  #888888       #292d2e    #222222
+client.urgent           $color9  $color1      $background   #900000    #900000
+client.placeholder      #000000  #0c0c0c      #ffffff       #000000    #0c0c0c
+
+client.background       #ffffff
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3blocks
         position top
         font pango:monospace 12
+        colors {
+            background $background
+            statusline #cccccc
+            separator #888888
+
+            # class            border   backg.  text
+            focused_workspace  $color12 $color4 #dddddd
+            active_workspace   #333333  #5f676a #ffffff
+            inactive_workspace #333333  #222222 #888888
+            urgent_workspace   $color9  $color1 #ffffff
+            binding_mode       #2f343a  #900000 #ffffff
+        }
 }
+
+# Hide window title on st
+for_window [class="St"] border pixel 1
+
+#Scratchpad
+for_window [class="KeePassXC"] move scratchpad
+bindsym $mod+Shift+a [instance="keepassxc"] scratchpad show, resize set 500 500

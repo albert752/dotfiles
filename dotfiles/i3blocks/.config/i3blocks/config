@@ -10,6 +10,29 @@
 separator=true
 separator_block_width=15
 
+[memory]
+command=memory
+label=RAM   
+interval=30
+
+[temperature]
+command=temperature
+label=TEMP   
+interval=10
+T_WARN=70
+T_CRIT=90
+#SENSOR_CHIP=""
+
+[cpu_usage2]
+command=cpu_usge
+markup=pango
+interval=persist
+
+[arch-update]
+command=arch-update 
+interval=3600
+markup=pango
+
 [public-ip]
 command=echo "pub_ip: $(wget -qO - icanhazip.com)"
 interval=once
