@@ -1,6 +1,0 @@
-[submodule "dotdrop"]
-	path = dotdrop
-	url = https://github.com/deadc0de6/dotdrop.git
-[submodule "dotfiles/dotfiles/vim/.vim/bundle/nerdcommenter"]
-	path = dotfiles/dotfiles/vim/.vim/bundle/nerdcommenter
-	url = https://github.com/preservim/nerdcommenter.git
