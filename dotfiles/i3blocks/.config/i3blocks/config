@@ -10,21 +10,32 @@
 separator=true
 separator_block_width=15
 
+[battery]
+command=battery -np
+#label=Battery   
+interval=10
+
+[backlight]
+command=backlight -np
+#label=Backlight   
+interval=30
+
 [memory]
 command=memory
-label=RAM   
+label= 
 interval=30
 
 [temperature]
 command=temperature
-label=TEMP   
+label= 
 interval=10
 T_WARN=70
 T_CRIT=90
 #SENSOR_CHIP=""
 
 [cpu_usage2]
-command=cpu_usge
+command=cpu_usge -l ""
+#label=ﴮ 
 markup=pango
 interval=persist
 
@@ -34,12 +45,12 @@ interval=3600
 markup=pango
 
 [public-ip]
-command=echo "pub_ip: $(wget -qO - icanhazip.com)"
+command=echo " $(wget -qO - icanhazip.com)"
 interval=once
 
 [weather]
 color=#ffffff
-command=curl -s 'wttr.in/{Barcelona}?format=3'
+command=curl -s 'wttr.in/{Sitges}?format=3'
 interval=once
 
 [time]
