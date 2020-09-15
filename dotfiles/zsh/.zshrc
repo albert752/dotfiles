@@ -105,5 +105,5 @@ alias vconf="vim ~/.vimrc"
 alias rconf="vim ~/.config/ranger/rc.conf"
 alias xconf="vim ~/.Xresources"
 alias bconf="vim ~/.config/i3blocks/config"
-alias toggle-touchpad "~/.i3/scripts/toggle-touchpad"
+alias dot="cd ~/Documents/Repos/dotfiles/dotfiles"
 EDITOR=vim
