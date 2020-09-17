@@ -1,1 +1,3 @@
-echo "pub_ip: $(wget -qO - icanhazip.com)"
+icon="<span color='#458588'></span>"
+value="$(wget -qO - icanhazip.com)"
+echo "$icon <span color='#ebdbb2'>$value</span>"

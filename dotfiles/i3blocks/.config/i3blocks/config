@@ -14,6 +14,13 @@ separator_block_width=15
 command=battery -np
 #label=Battery   
 interval=10
+markup=pango
+
+[volume]
+command=volume
+#label=Battery   
+interval=1
+markup=pango
 
 [backlight]
 command=backlight -np
@@ -45,14 +52,17 @@ interval=3600
 markup=pango
 
 [public-ip]
-command=echo " $(wget -qO - icanhazip.com)"
-interval=once
+command=public-ip
+interval=1
+markup=pango
 
 [weather]
 color=#ffffff
-command=curl -s 'wttr.in/{Sitges}?format=3'
-interval=once
+command=echo "<span color='#ebdbb2'>$(curl -s 'wttr.in/{Sitges}?format=3') </span>"
+interval=1800
+markup=pango
 
 [time]
-command=date '+%H:%M:%S %d-%m-%Y'
+command=echo "<span color='#ebdbb2'>$(date '+%H:%M:%S %d-%m-%Y') </span>"
+markup=pango
 interval=1
