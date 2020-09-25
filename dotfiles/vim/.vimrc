@@ -23,7 +23,7 @@ filetype plugin indent on
 " Shortcuts
 "let search_and_destroy = "/<++><Enter>"_c4l"
 map <C-t> :NERDTreeToggle<CR>
-map <C-e> <C-o>A
+inoremap <C-e> <C-o>A
 nmap <C-n> :tabnew<CR>
 map <C-i> /<++><Enter>"_c4l
 imap ;pl <++>
@@ -33,6 +33,9 @@ let g:python_highlight_all = 1
 
 " LaTeX
 let g:vimtex_view_method = 'zathura'
+let g:tex_flavor = 'latex'
+
+
 autocmd FileType *tex* inoremap ;i \textit{}<Esc>i
 autocmd FileType *tex* inoremap ;b \textbf{}<Esc>i
 autocmd FileType *tex* inoremap ;s \underline{}<Esc>i
