@@ -58,7 +58,7 @@ markup=pango
 
 [weather]
 color=#ffffff
-command=echo "<span color='#ebdbb2'>$(curl -s 'wttr.in/{Sitges}?format=3') </span>"
+command=echo "<span color='#ebdbb2'>$(curl -s 'wttr.in/{Barcelona}?format=3') </span>"
 interval=1800
 markup=pango
 
